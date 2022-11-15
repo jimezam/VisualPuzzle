@@ -1,6 +1,8 @@
 import cv2 as cv2
 import numpy as np
 
+################################################################
+
 def prepare(rows, cols, image):
     image = cv2.imread(image)
 
@@ -9,15 +11,13 @@ def prepare(rows, cols, image):
     boxWidth = int(width / cols)
     boxHeight = int(height / rows)
 
-    imageParts = np.zeros((rows, cols))
+    # numRows = np.shape(imageParts)[0]
+    # numColumns = np.shape(imageParts)[1]
 
-    numRows = np.shape(imageParts)[0]
-    numColumns = np.shape(imageParts)[1]
+    imageMatrix = np.empty((rows, cols), np.ndarray)
 
-    imageMatrix = np.empty((numRows, numColumns), np.ndarray)
-
-    for r in range(numRows):
-        for c in range(numColumns):
+    for r in range(rows):
+        for c in range(cols):
             rx = r * boxHeight
             cx = c * boxWidth
     
@@ -25,3 +25,5 @@ def prepare(rows, cols, image):
             # cv2.imshow(f"{r}x{c}", imageMatrix[r][c])  
 
     return imageMatrix
+
+################################################################
