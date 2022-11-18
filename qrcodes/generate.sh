@@ -1,0 +1,18 @@
+#!/bin/bash
+
+qrencode -o 1.png -s 10 -m 2 '1'
+qrencode -o 2.png -s 10 -m 2 '2'
+qrencode -o 3.png -s 10 -m 2 '3'
+qrencode -o 4.png -s 10 -m 2 '4'
+qrencode -o 5.png -s 10 -m 2 '5'
+qrencode -o 6.png -s 10 -m 2 '6'
+qrencode -o 7.png -s 10 -m 2 '7'
+qrencode -o 8.png -s 10 -m 2 '8'
+qrencode -o 9.png -s 10 -m 2 '9'
+qrencode -o 10.png -s 10 -m 2 '10'
+qrencode -o 11.png -s 10 -m 2 '11'
+qrencode -o 12.png -s 10 -m 2 '12'
+qrencode -o 13.png -s 10 -m 2 '13'
+qrencode -o 14.png -s 10 -m 2 '14'
+qrencode -o 15.png -s 10 -m 2 '15'
+qrencode -o 16.png -s 10 -m 2 '16'
