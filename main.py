@@ -12,9 +12,34 @@ def main():
 
     imageMatrix = puzzle.prepare(rows, cols, 'assets/image-1.jpg')
 
-    # ...
+    #################################################
+    camera_id = 0
+    cap = cv2.VideoCapture(camera_id)
+    qcd = cv2.QRCodeDetector()
+    decodedColor = (0, 255, 0)
+    errorColor = (0, 0, 255)
 
-    cv2.waitKey(0)  
+    delay = 1
+    windowName = 'Visual Puzzle'
+    font = cv2.FONT_HERSHEY_PLAIN
+
+    while True:
+        success, frame = cap.read()
+
+        if not success:
+            continue
+
+        processedFrame = puzzle.process(frame, qcd, decodedColor, errorColor, font)
+
+        cv2.imshow(windowName, processedFrame)
+
+        if cv2.waitKey(delay) & 0xFF == ord('q'):
+            break
+
+    # cv2.destroyWindow(window_name)
+    #################################################
+
+    # cv2.waitKey(0)  
     cv2.destroyAllWindows()
 
 ################################################################
